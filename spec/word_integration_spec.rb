@@ -65,11 +65,22 @@ describe('The see all words and definitions route', {:type => :feature}) do
   end
 end
 
-  describe('The return home route', {:type => :feature}) do
-    it('will allow users to navigate back to homepage') do
-      visit('/')
-      click_link('View All Words and Definitions')
-      click_link('Return Home')
-      expect(page).to have_content('Welcome to Word Definitions')
-    end
+describe('The return home route', {:type => :feature}) do
+  it('will allow users to navigate back to homepage') do
+    visit('/')
+    click_link('View All Words and Definitions')
+    click_link('Return Home')
+    expect(page).to have_content('Welcome to Word Definitions')
+  end
+end
+
+describe('The add failed search word route', {:type => :feature}) do
+  it('will allow users to add a word they searched for that wasn\'t on the list') do
+    visit('/')
+    fill_in('searched_word', :with => 'goat')
+    click_button('Search')
+    fill_in('part_of_speech', :with => 'noun')
+    click_button('Add it!')
+    expect(page).to have_content('goat')
+  end
 end
