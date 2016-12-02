@@ -64,3 +64,12 @@ describe('The see all words and definitions route', {:type => :feature}) do
     expect(page).to have_content('alpha hello a greeting')
   end
 end
+
+  describe('The return home route', {:type => :feature}) do
+    it('will allow users to navigate back to homepage') do
+      visit('/')
+      click_link('View All Words and Definitions')
+      click_link('Return Home')
+      expect(page).to have_content('Welcome to Word Definitions')
+    end
+end
