@@ -24,8 +24,13 @@ end
 
 post('/search') do
   @word_id = Word.search(params.fetch('searched_word'))
-  @word = Word.find(@word_id)
-  erb(:word)
+
+  if @word_id
+    @word = Word.find(@word_id)
+    erb(:word)
+  else
+    erb(:failure)
+  end
 end
 
 get('/word/:id') do

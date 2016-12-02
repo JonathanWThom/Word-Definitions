@@ -48,4 +48,12 @@ describe('The search word route', {:type => :feature}) do
     click_button('Search')
     expect(page).to have_content('alpha')
   end
+
+  it('will allow user to search for a word, and then return a failure message if there\'s no match') do
+    visit('/')
+    fill_in('searched_word', :with => 'goat')
+    click_button('Search')
+    expect(page).to have_content('I\'m sorry, that\'s not one of the words in the list')
+  end
+
 end
