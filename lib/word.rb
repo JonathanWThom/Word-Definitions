@@ -45,7 +45,7 @@ class Word
   define_singleton_method(:search) do |searched_word|
     found_word = nil
     @@words.each() do |word|
-      if word.word() == searched_word
+      if word.word().downcase == searched_word.downcase
         found_word = word
       end
     end
