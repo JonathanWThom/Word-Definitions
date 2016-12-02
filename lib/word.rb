@@ -49,6 +49,12 @@ class Word
         found_word = word
       end
     end
-    found_word.id()
+
+    if found_word
+      found_word.id()
+    else
+      false
+    end
+
   end
 end

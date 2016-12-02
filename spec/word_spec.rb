@@ -85,5 +85,12 @@ describe(Word) do
       second_word.save()
       expect(Word.search('dog')).to(eq(first_word.id()))
     end
+
+    it('will return false if there is no match') do
+      first_word = Word.new({:word => 'dog', :part_of_speech => 'noun'})
+      first_word.save()
+      expect(Word.search('goat')).to(eq(false))
+    end
   end
+
 end
