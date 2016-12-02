@@ -11,4 +11,10 @@ describe(Definition) do
       expect(@new_definition.definition()).to(eq('A greeting'))
     end
   end
+
+  describe('.all') do
+    it('will be empty at first') do
+      expect(Definition.all()).to(eq([]))
+    end
+  end
 end
