@@ -12,4 +12,10 @@ describe(Word) do
       expect(@new_word.word()).to(eq('Hello'))
     end
   end
+
+  describe('.all') do
+    it('will be empty at first') do
+      expect(Word.all()).to(eq([]))
+    end
+  end
 end
