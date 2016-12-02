@@ -1,5 +1,3 @@
-https://desolate-refuge-23877.herokuapp.com/
-
 # _Word Definitions_
 
 #### _Web application that allow users to add words, and definitions for those words. 12.2.16_
@@ -13,7 +11,7 @@ _Users can input words, and see them show up on a list on the homepage. They can
 ## Setup/Installation Requirements
 
 * _View here: https://desolate-refuge-23877.herokuapp.com/_
-* _Or,in the command line run:_
+* _Or, in the command line run:_
 ```
 $ git clone https://github.com/JonathanWThom/Word-Definitions
 $ cd word_definitions
@@ -36,11 +34,11 @@ $ ruby app.rb
 
 4. From the homepage, user can sort all words alphabetically.
   * Input example: "Dog", "Cat", "Goat"
-  * Output: "Cat", "Goat", "Dog"
+  * Output: "Cat", "Dog", "Goat"
 
 5. User can navigate to a page showing all words and their definitions.
   * Input example: Click("View All Words and Definitions")
-  * Output: "Dog - A furry friend", "Cat", "Goat"
+  * Output: "Cat", "Dog - A furry friend", "Goat"
 
 6. User can search for words and be taken to their page if they exist.
   * Input example: Search("Dog")
@@ -51,6 +49,10 @@ $ ruby app.rb
   * Output: "I'm sorry, Bear is not one of the words on the list."
   * Second input: Click("Add it!")
   * Second Output: "Bear"
+
+## Know Bugs
+
+Styles page does not apply to individual word pages, so (minimal) styling had to be done in-line.
 
 ## Support and contact details
 
