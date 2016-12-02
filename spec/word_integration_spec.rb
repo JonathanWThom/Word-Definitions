@@ -30,3 +30,13 @@ describe('The add definition route', {:type => :feature}) do
     expect(page).to have_content('a greeting')
   end
 end
+
+describe('The sort words route', {:type => :feature}) do
+  it('will allow user to sort words alphabetically') do
+    visit('/')
+    fill_in('word', :with => 'alpha')
+    click_button('Add Word')
+    click_link('Alphabetize Words')
+    expect(page).to have_content('alpha hello')
+  end
+end

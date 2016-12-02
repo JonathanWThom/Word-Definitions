@@ -17,6 +17,11 @@ post('/') do
   erb(:index)
 end
 
+get('/sorted') do
+  @words = Word.sort()
+  erb(:index)
+end
+
 get('/word/:id') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:word)
