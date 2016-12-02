@@ -53,7 +53,7 @@ describe('The search word route', {:type => :feature}) do
     visit('/')
     fill_in('searched_word', :with => 'goat')
     click_button('Search')
-    expect(page).to have_content('I\'m sorry, that\'s not one of the words in the list')
+    expect(page).to have_content('I\'m sorry, "goat" is not one of the words on the list')
   end
 end
 

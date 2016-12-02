@@ -29,6 +29,7 @@ post('/search') do
     @word = Word.find(@word_id)
     erb(:word)
   else
+    @word = params.fetch('searched_word')
     erb(:failure)
   end
 end
