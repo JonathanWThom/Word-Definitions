@@ -1,9 +1,9 @@
 require('rspec')
 require('word')
-require('definitions')
+require('definition')
 
 describe(Word) do
-  before do
+  before() do
     @new_word = Word.new({:word => 'Hello'})
   end
 
