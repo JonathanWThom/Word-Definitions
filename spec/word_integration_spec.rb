@@ -55,5 +55,12 @@ describe('The search word route', {:type => :feature}) do
     click_button('Search')
     expect(page).to have_content('I\'m sorry, that\'s not one of the words in the list')
   end
+end
 
+describe('The see all words and definitions route', {:type => :feature}) do
+  it('will allow user to see a list all words with their definitions') do
+    visit('/')
+    click_link('View All Words and Definitions')
+    expect(page).to have_content('alpha hello a greeting')
+  end
 end

@@ -1,0 +1,13 @@
+<h1>All Words and Definitions</h1>
+<ul>
+  <% @words.each() do |word| %>
+  <li><a href='/word/<%= word.id %>'><%= word.word() %></a></li>
+    <ul>
+      <% word.definitions().each() do |definition| %>
+      <li><%= definition.definition() %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+
+<a href='/'>Return Home</a>

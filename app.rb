@@ -38,6 +38,11 @@ get('/word/:id') do
   erb(:word)
 end
 
+get('/all') do
+  @words = Word.all()
+  erb(:words_and_definitions)
+end
+
 post('/word') do
   definition = params.fetch('definition')
   @new_definition = Definition.new(:definition => definition)
