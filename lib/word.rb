@@ -39,4 +39,14 @@ class Word
   define_singleton_method(:sort) do
     @@words.sort_by! {|word| word.word().downcase() }
   end
+
+  define_singleton_method(:search) do |searched_word|
+    found_word = nil
+    @@words.each() do |word|
+      if word.word() == searched_word
+        found_word = word
+      end
+    end
+    found_word
+  end
 end

@@ -76,4 +76,14 @@ describe(Word) do
       expect(Word.all()).to(eq([second_word, first_word]))
     end
   end
+
+  describe('.search') do
+    it('will return word searched for if there is a match') do
+      first_word = Word.new({:word => 'dog', :part_of_speech => 'noun'})
+      first_word.save()
+      second_word = Word.new({:word => 'cat', :part_of_speech => 'noun'})
+      second_word.save()
+      expect(Word.search('dog')).to(eq(first_word))
+    end
+  end
 end
