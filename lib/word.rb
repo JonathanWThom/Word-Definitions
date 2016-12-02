@@ -47,6 +47,6 @@ class Word
         found_word = word
       end
     end
-    found_word
+    found_word.id()
   end
 end

@@ -22,6 +22,12 @@ get('/sorted') do
   erb(:index)
 end
 
+get('/word/searched_word/:id') do
+  @word = Word.search(params.fetch('searched_word'))
+  
+  erb(:word)
+end
+
 get('/word/:id') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:word)

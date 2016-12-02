@@ -83,7 +83,7 @@ describe(Word) do
       first_word.save()
       second_word = Word.new({:word => 'cat', :part_of_speech => 'noun'})
       second_word.save()
-      expect(Word.search('dog')).to(eq(first_word))
+      expect(Word.search('dog')).to(eq(first_word.id()))
     end
   end
 end
