@@ -33,4 +33,11 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe('#id') do
+    it('will return a unique id for each word') do
+      @new_word.save()
+      expect(@new_word.id()).to(eq(1))
+    end
+  end
 end
