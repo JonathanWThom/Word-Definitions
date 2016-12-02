@@ -11,3 +11,11 @@ describe('The add new word route', {:type => :feature}) do
     expect(page).to have_content('hello')
   end
 end
+
+describe('The find word page route', {:type => :feature}) do
+  it('will allow user to be page to page for specific word clicked on') do
+    visit('/')
+    click_link('hello')
+    expect(page).to have_content('hello')
+  end
+end
