@@ -6,16 +6,16 @@
 <h2>These are your words so far:</h2>
 <ul>
   <% @words.each() do |word| %>
-  <li><a href='/word/<%= word.id %>'><% word.name() %></a></li>
+  <li><a href='/word/<%= word.id %>'><%= word.word() %></a></li>
   <% end %>
 </ul>
 
 
 <h2>Add a word here:</h2>
-<form action='/word/:id' method='post'>
+<form action='/' method='post'>
   <div class='form-group'>
     <label for='word'>Word</label>
     <input id='word' name='word'>
   </div>
-  <button type='submit' class='form-control'>Add Word</button>
+  <button type='submit' class='btn'>Add Word</button>
 </form>
