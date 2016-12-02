@@ -40,4 +40,13 @@ describe(Word) do
       expect(@new_word.id()).to(eq(1))
     end
   end
+
+  describe('.find') do
+    it('will find a particular word based on id') do
+      @new_word.save()
+      second_word = Word.new({:word => 'World'})
+      second_word.save()
+      expect(Word.find(@new_word.id())).to(eq(@new_word))
+    end
+  end
 end
