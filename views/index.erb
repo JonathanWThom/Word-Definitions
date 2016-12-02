@@ -1,37 +1,33 @@
 <h1>Welcome to Word Definitions</h1>
-<h2>Aka, A Dictionary</h2>
-<h3>Fill out the form to add a word</h3>
-<h3>Click on a word to add or see its definitions</h3>
+<h2>Aka, "Make Your Own Dictionary"</h2>
 
-<h2>These are your words so far:</h2>
+<h3>Add a word here:</h3>
+<form action='/' method='post'>
+  <div class='form-group'>
+    <input id='word' name='word' placeholder='Word'>
+  </div>
+  <div class='form-group'>
+    <input id='part_of_speech' name='part_of_speech' placeholder='Part of Speech'>
+  </div>
+  <button type='submit' class='btn btn-primary'>Add Word</button>
+</form>
+
+<h3>These are your words so far (click to add and see definitions):</h3>
 <ul>
   <% @words.each() do |word| %>
   <li><a href='/word/<%= word.id %>'><%= word.word() %></a></li>
   <% end %>
 </ul>
-<a href='/sorted'>Alphabetize Words</a>
 
+<h3>And here are some fun things you can do with your words list:</h3>
 
-<h2>Add a word here:</h2>
-<form action='/' method='post'>
-  <div class='form-group'>
-    <label for='word'>Word</label>
-    <input id='word' name='word'>
-  </div>
-  <div class='form-group'>
-    <label for='part_of_speech'>Part of Speech</label>
-    <input id='part_of_speech' name='part_of_speech'>
-  </div>
-  <button type='submit' class='btn'>Add Word</button>
-</form>
+<h5><a href='/sorted'>Alphabetize Words</a></h5>
+<h5><a href='/all'>View All Words and Definitions</a></h5>
 
-<h2>Search for a word:</h2>
+<h5>Search for a word:</h5>
 <form action='/search' method='post'>
   <div class='form-group'>
-    <label for='searched_word'>Word to Search For</label>
-    <input id='searched_word' name='searched_word'>
+    <input id='searched_word' name='searched_word' placeholder='Word to Search For'>
   </div>
   <button type='submit' class='btn'>Search</button>
 </form>
-
-<a href='/all'>View All Words and Definitions</a>

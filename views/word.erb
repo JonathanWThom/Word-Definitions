@@ -1,18 +1,20 @@
-<h1><%= @word.word() %> (<%= @word.part_of_speech() %>)</h1>
+<h1 style='text-align:center'><%= @word.word() %> (<%= @word.part_of_speech() %>)</h1>
+
+<h3>Add a definition here:</h3>
+<form action='/word' method='post'>
+  <div class='form-group'>
+    <input type='hidden' id='word_id' name='word_id' value='<%= @word.id() %>'>
+    <input id='definition' name='definition' placeholder='New Definition'>
+  </div>
+  <button type="submit" class='btn btn-primary'>Add Definition</button>
+</form>
+
+<h3>Definitions</h3>
 <ul>
   <% @word.definitions().each() do |definition| %>
   <li><%= definition.definition() %></li>
   <% end %>
 </ul>
 
-<form action='/word' method='post'>
-  <div class='form-group'>
-    <input type='hidden' id='word_id' name='word_id' value='<%= @word.id() %>'>
-    <label for='definition'>New Definition</label>
-    <input id='definition' name='definition'>
-  </div>
-  <button type="submit" class='btn'>Add Definition</button>
-</form>
-
-
+<br>
 <a href='/'>Return to Word List</a>
