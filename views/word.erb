@@ -5,8 +5,9 @@
   <% end %>
 </ul>
 
-<form action='/:id' method='post'>
+<form action='/word' method='post'>
   <div class='form-group'>
+    <input type='hidden' id='word-id' name='word_id' value='<%= @word.id() %>'>
     <label for='definition'>New Definition</label>
     <input id='definition' name='definition'>
   </div>

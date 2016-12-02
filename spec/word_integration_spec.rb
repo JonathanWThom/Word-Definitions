@@ -19,3 +19,13 @@ describe('The find word page route', {:type => :feature}) do
     expect(page).to have_content('hello')
   end
 end
+
+describe('The add definition route', {:type => :feature}) do
+  it('will allow user to add a definition to a word') do
+    visit('/')
+    click_link('hello')
+    fill_in('definition', :with => 'a greeting')
+    click_button('Add Definition')
+    expect(page).to have_content('a greeting')
+  end
+end
