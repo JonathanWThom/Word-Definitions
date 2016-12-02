@@ -35,4 +35,8 @@ class Word
   define_method(:add_definition) do |definition|
     @definitions.push(definition)
   end
+
+  define_singleton_method(:sort) do
+    @@words.sort_by! {|word| word.word().downcase() }
+  end
 end

@@ -65,4 +65,15 @@ describe(Word) do
       expect(@new_word.definitions()).to(eq([new_definition]))
     end
   end
+
+  describe('.sort') do
+    it('will return words in alphabetical order') do
+      first_word = Word.new({:word => 'dog', :part_of_speech => 'noun'})
+      first_word.save()
+      second_word = Word.new({:word => 'cat', :part_of_speech => 'noun'})
+      second_word.save()
+      Word.sort()
+      expect(Word.all()).to(eq([second_word, first_word]))
+    end
+  end
 end
