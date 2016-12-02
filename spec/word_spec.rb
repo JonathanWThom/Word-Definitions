@@ -5,12 +5,18 @@ require('definition')
 describe(Word) do
   before() do
     Word.clear()
-    @new_word = Word.new({:word => 'Hello'})
+    @new_word = Word.new({:word => 'Hello', :part_of_speech => 'Interjection'})
   end
 
   describe("#word") do
     it('will return the word') do
       expect(@new_word.word()).to(eq('Hello'))
+    end
+  end
+
+  describe('#part_of_speech') do
+    it('will return the part of speech of a word') do
+      expect(@new_word.part_of_speech()).to(eq('Interjection'))
     end
   end
 
@@ -45,7 +51,7 @@ describe(Word) do
   describe('.find') do
     it('will find a particular word based on id') do
       @new_word.save()
-      second_word = Word.new({:word => 'World'})
+      second_word = Word.new({:word => 'World', :part_of_speech => 'Noun'})
       second_word.save()
       expect(Word.find(@new_word.id())).to(eq(@new_word))
     end

@@ -1,10 +1,11 @@
 class Word
   @@words = []
 
-  attr_reader(:word, :id, :definitions)
+  attr_reader(:word, :part_of_speech, :id, :definitions)
 
   define_method(:initialize) do |attributes|
     @word = attributes.fetch(:word)
+    @part_of_speech = attributes.fetch(:part_of_speech)
     @id = @@words.length + 1
     @definitions = []
   end

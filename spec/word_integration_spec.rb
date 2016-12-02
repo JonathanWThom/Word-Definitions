@@ -7,16 +7,17 @@ describe('The add new word route', {:type => :feature}) do
   it('will add a new word to the homepage') do
     visit('/')
     fill_in('word', :with => 'hello')
+    fill_in('part_of_speech', :with => 'interjection')
     click_button('Add Word')
     expect(page).to have_content('hello')
   end
 end
 
 describe('The find word page route', {:type => :feature}) do
-  it('will allow user to be page to page for specific word clicked on') do
+  it('will allow user navigate to the page for specific word clicked on') do
     visit('/')
     click_link('hello')
-    expect(page).to have_content('hello')
+    expect(page).to have_content('hello (interjection)')
   end
 end
 

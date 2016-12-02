@@ -11,7 +11,8 @@ end
 
 post('/') do
   word = params.fetch('word')
-  Word.new(:word => word).save()
+  part_of_speech = params.fetch('part_of_speech')
+  Word.new(:word => word, :part_of_speech => part_of_speech).save()
   @words = Word.all()
   erb(:index)
 end

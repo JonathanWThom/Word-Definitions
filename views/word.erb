@@ -1,4 +1,4 @@
-<h1><%= @word.word() %></h1>
+<h1><%= @word.word() %> (<%= @word.part_of_speech() %>)</h1>
 <ul>
   <% @word.definitions().each() do |definition| %>
   <li><%= definition.definition() %></li>
@@ -15,4 +15,4 @@
 </form>
 
 
-<!--Add links-->
+<a href='/'>Return to Word List</a>
