@@ -22,9 +22,9 @@ get('/sorted') do
   erb(:index)
 end
 
-get('/word/searched_word/:id') do
-  @word = Word.search(params.fetch('searched_word'))
-  
+post('/search') do
+  @word_id = Word.search(params.fetch('searched_word'))
+  @word = Word.find(@word_id)
   erb(:word)
 end
 

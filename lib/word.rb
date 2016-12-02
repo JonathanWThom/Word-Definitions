@@ -30,6 +30,8 @@ class Word
       end
     end
     found_word
+
+    # needs to deal with misses
   end
 
   define_method(:add_definition) do |definition|

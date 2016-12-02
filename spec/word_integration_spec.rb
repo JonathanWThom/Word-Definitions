@@ -40,3 +40,12 @@ describe('The sort words route', {:type => :feature}) do
     expect(page).to have_content('alpha hello')
   end
 end
+
+describe('The search word route', {:type => :feature}) do
+  it('will allow user to search for a word, and then return that word\'s page if there is a match') do
+    visit('/')
+    fill_in('searched_word', :with => 'alpha')
+    click_button('Search')
+    expect(page).to have_content('alpha')
+  end
+end
