@@ -1,2 +1,10 @@
 <h1>I'm sorry, "<%= @word %>" is not one of the words on the list</h1>
+<form action='/' method='post'>
+  <input id='word' name='word' value='<%= @word %>' type='hidden'>
+  <div class="form-group">
+    <input id='part_of_speech' name='part_of_speech' placeholder='Part of Speech'>
+  </div>
+  <button type="sumbit" class='btn btn-primary'>Add it!</button>
+</form>
+<br>
 <a href='/'>Return to homepage</a>
