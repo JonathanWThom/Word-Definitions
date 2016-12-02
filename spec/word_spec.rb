@@ -4,6 +4,7 @@ require('definition')
 
 describe(Word) do
   before() do
+    Word.clear()
     @new_word = Word.new({:word => 'Hello'})
   end
 

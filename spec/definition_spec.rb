@@ -3,6 +3,7 @@ require('definition')
 
 describe(Definition) do
   before() do
+    Definition.clear()
     @new_definition = Definition.new({:definition => 'A greeting'})
   end
 
@@ -22,6 +23,14 @@ describe(Definition) do
     it('will save a definition') do
       @new_definition.save()
       expect(Definition.all()).to(eq([@new_definition]))
+    end
+  end
+
+  describe('.clear') do
+    it('will clear out all definitions') do
+      @new_definition.save()
+      Definition.clear()
+      expect(Definition.all()).to(eq([]))
     end
   end
 end
