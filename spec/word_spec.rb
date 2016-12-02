@@ -50,4 +50,13 @@ describe(Word) do
       expect(Word.find(@new_word.id())).to(eq(@new_word))
     end
   end
+
+  describe('#add_definition') do
+    it('will add a definition to a word') do
+      @new_word.save()
+      new_definition = Definition.new({:definition => "The Earth"})
+      @new_word.add_definition(new_definition)
+      expect(@new_word.definitions()).to(eq([new_definition]))
+    end
+  end
 end

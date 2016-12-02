@@ -1,11 +1,12 @@
 class Word
   @@words = []
 
-  attr_reader(:word, :id)
+  attr_reader(:word, :id, :definitions)
 
   define_method(:initialize) do |attributes|
     @word = attributes.fetch(:word)
     @id = @@words.length + 1
+    @definitions = []
   end
 
   define_singleton_method(:all) do
@@ -27,6 +28,10 @@ class Word
         found_word = word
       end
     end
-    found_word 
+    found_word
+  end
+
+  define_method(:add_definition) do |definition|
+    @definitions.push(definition)
   end
 end
