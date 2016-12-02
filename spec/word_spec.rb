@@ -25,4 +25,12 @@ describe(Word) do
       expect(Word.all()).to(eq([@new_word]))
     end
   end
+
+  describe('.clear') do
+    it('will empty out the words') do
+      @new_word.save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
+    end
+  end
 end
